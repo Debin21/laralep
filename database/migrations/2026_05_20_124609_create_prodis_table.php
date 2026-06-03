@@ -11,15 +11,14 @@ return new class extends Migration
     {
         Schema::create('prodis', function (Blueprint $table) {
             $table->id();
-
             $table->foreignIdFor(Fakultas::class)
                   ->constrained('fakultas')
                   ->cascadeOnDelete();
-
             $table->string('nama_prodi');
             $table->string('nama_kaprodi');
             $table->string('alias_prodi');
-
+            $table->string('photo_prodi')->nullable();
+            $table->foreignIdFor(Fakultas::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

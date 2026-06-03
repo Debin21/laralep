@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prodi extends Model
 {
-    protected $table = 'prodi';
+    protected $table = 'prodis'; 
 
     protected $fillable = [
         'fakultas_id',
@@ -15,12 +15,11 @@ class Prodi extends Model
         'alias_prodi',
         'photo_kaprodi'
     ];
-
-    $photoKaprodi = storage::disk("public")->putFile('prodi', $request->file('photo_kaprodi'));
-
-    $validated['photo_kaprodi'] = $photoKaprodi
-
-    Prodi::create($validated);
+    
+    public function NULL()
+    {
+        
+    }
 
     public function fakultas()
     {
